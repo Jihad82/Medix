@@ -484,12 +484,12 @@ export default function App() {
             {/* Our Facility Video Tour Player */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-video bg-stone-900 group">
               <iframe 
-                src="https://www.youtube.com/embed/TLaxV3pUAYo?autoplay=1&mute=1&loop=1&playlist=TLaxV3pUAYo" 
-                title="Our Facility Video Tour"
+                src="https://www.youtube-nocookie.com/embed/TLaxV3pUAYo?si=DaGSiU5h0LkMfSvH&autoplay=1&mute=1&loop=1&playlist=TLaxV3pUAYo" 
+                title="YouTube video player"
                 className="absolute inset-0 w-full h-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowFullScreen
-                referrerPolicy="no-referrer"
+                referrerPolicy="strict-origin-when-cross-origin"
               ></iframe>
               <div className="hidden">
                 <div className="absolute inset-0 bg-stone-950/90 z-10 flex flex-col p-6 justify-between animate-fade-in" id="virtual-tour-screen">
