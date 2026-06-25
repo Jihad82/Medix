@@ -1,0 +1,6 @@
+{
+  "name": "Medix Signature Clinic",
+  "description": "A premium boutique hospital website for Medix Signature Clinic with a fully functional booking system and interactive client dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
