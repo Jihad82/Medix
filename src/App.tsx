@@ -19,7 +19,6 @@ export default function App() {
   // Interactive UI States
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [virtualTourOpen, setVirtualTourOpen] = useState(false);
   
   // Newsletter Sub state
   const [subEmail, setSubEmail] = useState('');
@@ -377,7 +376,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="overflow-hidden rounded-2xl shadow-xl border border-stone-100">
               <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800&h=600" 
+                src="https://medixsignatureclinic.com/images/homePage1.jpg" 
                 alt="Doctor explaining diagnosis to patient" 
                 className="w-full h-[300px] object-cover hover:scale-102 transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -404,7 +403,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="md:order-2 overflow-hidden rounded-2xl shadow-xl border border-stone-100">
               <img 
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800&h=600" 
+                src="https://medixsignatureclinic.com/images/homePage2.jpg" 
                 alt="Medical consultants collaborating" 
                 className="w-full h-[300px] object-cover hover:scale-102 transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -431,7 +430,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="overflow-hidden rounded-2xl shadow-xl border border-stone-100">
               <img 
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800&h=600" 
+                src="https://medixsignatureclinic.com/images/homePage3.jpg" 
                 alt="Quiet and luxurious clinic lobby" 
                 className="w-full h-[300px] object-cover hover:scale-102 transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -482,25 +481,20 @@ export default function App() {
               </div>
             </div>
 
-            {/* Mock virtual tour player container */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-video bg-stone-900 flex flex-col justify-center items-center group">
-              <img 
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800&h=600&blur=3" 
-                alt="Clinic tour background" 
-                className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-102 transition-transform duration-700"
+            {/* Our Facility Video Tour Player */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-video bg-stone-900 group">
+              <iframe 
+                src="https://www.youtube.com/embed/TLaxV3pUAYo?autoplay=1&mute=1&loop=1&playlist=TLaxV3pUAYo" 
+                title="Our Facility Video Tour"
+                className="absolute inset-0 w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
                 referrerPolicy="no-referrer"
-              />
-              
-              {virtualTourOpen ? (
+              ></iframe>
+              <div className="hidden">
                 <div className="absolute inset-0 bg-stone-950/90 z-10 flex flex-col p-6 justify-between animate-fade-in" id="virtual-tour-screen">
                   <div className="flex justify-between items-center text-white border-b border-stone-800 pb-2">
                     <h4 className="text-xs font-black tracking-wider uppercase text-orange-400">Medix Walkthrough Slideshow</h4>
-                    <button 
-                      onClick={() => setVirtualTourOpen(false)}
-                      className="p-1 bg-stone-800 hover:bg-red-500 rounded-full transition-colors cursor-pointer text-white"
-                    >
-                      <X className="w-3.5 h-3.5" />
-                    </button>
                   </div>
                   
                   {/* Virtual slides */}
@@ -521,21 +515,7 @@ export default function App() {
                     <span className="text-orange-500 font-bold">● LIVE STREAM</span>
                   </div>
                 </div>
-              ) : (
-                <div className="relative z-10 text-center space-y-4 p-6 flex flex-col items-center">
-                  <button 
-                    onClick={() => setVirtualTourOpen(true)}
-                    className="w-16 h-16 bg-orange-500 hover:bg-orange-600 text-white rounded-full flex items-center justify-center shadow-lg shadow-orange-500/30 hover:scale-110 transition-all cursor-pointer"
-                    id="play-tour-btn"
-                  >
-                    <Play className="w-6 h-6 fill-current ml-1" />
-                  </button>
-                  <div>
-                    <h3 className="text-white font-extrabold text-sm tracking-tight uppercase">At Medix Signature</h3>
-                    <p className="text-orange-200 text-xs mt-0.5">Click to view virtual tour of premium facilities</p>
-                  </div>
-                </div>
-              )}
+              </div>
             </div>
 
           </div>
